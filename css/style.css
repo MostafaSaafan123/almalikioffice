@@ -1,0 +1,207 @@
+/* Colors */
+:root {
+  --first-color: #FFF;
+  --second-color: #39ae41;
+  --third-color: #B52929;
+  --fourth-color: #7b7b7b;
+  /* --fourth-color: #3939af; */
+}
+
+body {
+  font-family: 'Noto Kufi Arabic', sans-serif;
+}
+
+p {
+  line-height: 1.5;
+}
+
+/* Landing */
+.landing {
+  background-image: url(../images/landing.svg);
+  background-size: cover;
+  height: 850px;
+  position: relative;
+
+  .welcome-text {
+    top: 18%;
+    left: 50%;
+    font-size: 20px;
+    color: var(--first-color);
+
+    h1 {
+      margin-bottom: 10px;
+      filter: drop-shadow(2px 4px 6px black);
+    }
+
+    p {
+      margin: 25px 0 0 0;
+      width: 800px;
+    }
+  }
+
+  .buttons {
+    top: 40%;
+    left: 50%;
+    width: 500px;
+
+    &>a {
+      border-radius: 10px;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      color: var(--first-color);
+
+      img {
+        margin-right: 10px;
+      }
+    }
+
+    .whatsapp {
+      background-color: var(--second-color);
+
+      img {
+        background-color: var(--first-color);
+        border-radius: 50%;
+      }
+    }
+
+    .phone {
+      background-color: var(--third-color);
+    }
+
+    img {
+      width: 30px;
+    }
+  }
+
+  &::after,
+  &::before {
+    content: "";
+    background-image: url(../images/landing.svg);
+    background-size: cover;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+
+  &::after {
+    top: 15px;
+    opacity: 0.75;
+  }
+
+  &::before {
+    top: 30px;
+    opacity: 0.5;
+  }
+}
+
+/* Media Queries for Landing */
+@media (max-width: 850px) {
+  .landing .welcome-text p {
+    width: 600px;
+  }
+
+  @media (max-width: 768px) {
+    .landing .welcome-text {
+      font-size: 16px;
+
+      p {
+        width: 500px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .landing .buttons {
+        justify-content: space-evenly;
+      }
+
+      .landing .welcome-textp {
+        width: 400px;
+      }
+
+      @media (max-width: 500px) {
+        .landing .welcome-text {
+          h1 {
+            font-size: 30px;
+          }
+
+          p {
+            font-size: 14px;
+            width: 350px;
+          }
+        }
+
+        .landing .buttons {
+          flex-direction: column;
+          width: 180px;
+          justify-content: center;
+
+          .whatsapp {
+            margin-bottom: 10px;
+          }
+        }
+
+        @media (max-width: 350px) {
+          .landing .welcome-text {
+            h1 {
+              font-size: 25px;
+            }
+
+            p {
+              font-size: 12px;
+              width: 300px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Features */
+.features {
+  top: -200px;
+  margin: 0 15px;
+
+  .heading {
+    max-width: 800px;
+    margin: 0 auto;
+
+    h2 {
+      margin-bottom: 15px;
+    }
+  }
+
+  .cards {
+    margin-top: 50px;
+
+    .feat {
+      width: 250px;
+      margin: 0 15px;
+      text-align: center;
+      border-radius: 10px;
+      box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+      padding: 10px 20px;
+      margin-top: 20px;
+
+      img {
+        width: 50px;
+        margin-bottom: 15px;
+      }
+
+      h3 {
+        font-size: 18px;
+        font-weight: bold;
+      }
+
+      p {
+        color: var(--fourth-color);
+        font-weight: 500;
+        font-size: 14px;
+      }
+    }
+  }
+}
